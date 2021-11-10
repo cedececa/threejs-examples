@@ -1,0 +1,182 @@
+{
+  "_args": [
+    [
+      "three",
+      "/mnt/c/Users/Cheng/Desktop/threejs-my-examples"
+    ]
+  ],
+  "_from": "three@latest",
+  "_hasShrinkwrap": false,
+  "_id": "three@0.134.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/three",
+  "_nodeVersion": "12.18.4",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/three_0.134.0_1635434151847_0.8483013991239399"
+  },
+  "_npmUser": {
+    "email": "info@mrdoob.com",
+    "name": "mrdoob"
+  },
+  "_npmVersion": "7.20.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "three",
+    "raw": "three",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/three/-/three-0.134.0.tgz",
+  "_shasum": "d7ad4d85d050da0861bf39749b06ddfb5f17157f",
+  "_shrinkwrap": null,
+  "_spec": "three",
+  "_where": "/mnt/c/Users/Cheng/Desktop/threejs-my-examples",
+  "author": {
+    "name": "mrdoob"
+  },
+  "bugs": {
+    "url": "https://github.com/mrdoob/three.js/issues"
+  },
+  "dependencies": {},
+  "description": "JavaScript 3D library",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/eslint-parser": "^7.15.7",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/preset-env": "^7.15.6",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "chalk": "^4.1.2",
+    "concurrently": "^6.2.2",
+    "eslint": "^7.32.0",
+    "eslint-config-mdcs": "^5.0.0",
+    "eslint-plugin-html": "^6.2.0",
+    "glob": "^7.2.0",
+    "rollup": "^2.57.0",
+    "rollup-plugin-filesize": "^9.1.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-visualizer": "^5.5.2",
+    "servez": "^1.12.0"
+  },
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "test"
+  },
+  "dist": {
+    "fileCount": 1126,
+    "integrity": "sha512-LbBerg7GaSPjYtTOnu41AMp7tV6efUNR3p4Wk5NzkSsNTBuA5mDGOfwwZL1jhhVMLx9V20HolIUo0+U3AXehbg==",
+    "shasum": "d7ad4d85d050da0861bf39749b06ddfb5f17157f",
+    "tarball": "https://registry.npmjs.org/three/-/three-0.134.0.tgz",
+    "unpackedSize": 27029402
+  },
+  "eslintConfig": {
+    "extends": "mdcs",
+    "globals": {
+      "OIMO": true,
+      "Stats": true,
+      "XRWebGLBinding": true,
+      "XRWebGLLayer": true,
+      "ZSTDDecoder": true,
+      "bodymovin": true,
+      "fflate": true,
+      "potpack": true
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "babelOptions": {
+        "configFile": "./utils/build/.babelrc.json"
+      }
+    },
+    "plugins": [
+      "html"
+    ],
+    "root": true,
+    "rules": {
+      "prefer-const": [
+        {
+          "destructuring": "any",
+          "ignoreReadBeforeAssign": false
+        },
+        "error"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ]
+    }
+  },
+  "gitHead": "00a692864f541a3ec194d266e220efd597eb28fa",
+  "homepage": "https://threejs.org/",
+  "jspm": {
+    "directories": {},
+    "files": [
+      "LICENSE",
+      "README.md",
+      "build/three.js",
+      "build/three.min.js",
+      "build/three.module.js",
+      "package.json"
+    ]
+  },
+  "keywords": [
+    "3d",
+    "augmented-reality",
+    "canvas",
+    "html5",
+    "javascript",
+    "svg",
+    "three",
+    "three.js",
+    "virtual-reality",
+    "webaudio",
+    "webgl",
+    "webgl2",
+    "webgpu",
+    "webxr"
+  ],
+  "license": "MIT",
+  "main": "build/three.js",
+  "maintainers": [
+    {
+      "name": "mrdoob",
+      "email": "info@mrdoob.com"
+    }
+  ],
+  "module": "build/three.module.js",
+  "name": "three",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrdoob/three.js.git"
+  },
+  "scripts": {
+    "build": "rollup -c utils/build/rollup.config.js",
+    "build-examples": "rollup -c utils/build/rollup.examples.config.js && echo '\nFormatting...' && eslint examples/js --ext js --ignore-pattern libs --ignore-pattern ifc --fix",
+    "build-module": "ONLY_MODULE=true rollup -c utils/build/rollup.config.js",
+    "dev": "concurrently --names \"ROLLUP,HTTP\" -c \"bgBlue.bold,bgGreen.bold\" \"rollup -c utils/build/rollup.config.js -w -m inline\" \"servez -p 8080\"",
+    "lint": "eslint src --ext js",
+    "lint-docs": "eslint docs --ext html",
+    "lint-examples": "eslint examples/js examples/jsm --ext js --ignore-pattern libs --ignore-pattern ifc",
+    "lint-fix": "npm run lint -- --fix && npm run lint-examples -- --fix",
+    "make-screenshot": "node test/e2e/puppeteer.js --make",
+    "prepublishOnly": "node utils/prepublish.js",
+    "start": "npm run dev",
+    "test": "npm run lint && npm run test-unit",
+    "test-e2e": "node test/e2e/puppeteer.js",
+    "test-e2e-cov": "node test/e2e/check-coverage.js",
+    "test-treeshake": "rollup -c test/rollup.treeshake.config.js",
+    "test-unit": "npm run unit --prefix test",
+    "test-unit-examples": "npm run unit-examples --prefix test"
+  },
+  "sideEffects": false,
+  "version": "0.134.0"
+}
